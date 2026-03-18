@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VOTE STEF | Work Council 2026",
-  description: "Vote for Stef — Your voice in the Work Council. Together we rise!",
+  title: "VOTE STEF | DXC Works Council",
+  description: "Vote for Stefano Clemente — DXC Works Council Candidate. Trust, Transparency, Collaboration, Advocacy, Empathy.",
 };
 
 export default function RootLayout({
