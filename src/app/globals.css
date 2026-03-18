@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ===== CAMPAIGN COLOR SCHEME ===== */
+:root {
+  --gold: #ffd700;
+  --deep-blue: #0a1628;
+  --electric-blue: #00b4ff;
+  --hot-pink: #ff2d95;
+  --fire-orange: #ff6b35;
+}
+
+/* ===== SCROLLING BANNER ===== */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 20s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 25s linear infinite;
+}
+
+/* ===== GLOW EFFECTS ===== */
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 10px var(--gold),
+      0 0 20px var(--gold),
+      0 0 40px var(--fire-orange),
+      0 0 80px var(--fire-orange);
+  }
+  50% {
+    text-shadow:
+      0 0 20px var(--gold),
+      0 0 40px var(--gold),
+      0 0 60px var(--hot-pink),
+      0 0 100px var(--hot-pink);
+  }
+}
+
+.animate-text-glow {
+  animation: text-glow 2s ease-in-out infinite;
+}
+
+@keyframes box-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 10px var(--electric-blue),
+      0 0 30px var(--electric-blue),
+      inset 0 0 10px rgba(0, 180, 255, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 20px var(--hot-pink),
+      0 0 50px var(--hot-pink),
+      inset 0 0 20px rgba(255, 45, 149, 0.1);
+  }
+}
+
+.animate-box-glow {
+  animation: box-glow 3s ease-in-out infinite;
+}
+
+/* ===== SPARKLE / STAR ===== */
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(5deg); }
+  66% { transform: translateY(10px) rotate(-3deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ===== FIREWORK BURST ===== */
+@keyframes firework {
+  0% { transform: scale(0); opacity: 1; }
+  50% { opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* ===== RAINBOW BORDER ===== */
+@keyframes rainbow-border {
+  0% { border-color: #ff0000; }
+  14% { border-color: #ff7700; }
+  28% { border-color: #ffff00; }
+  42% { border-color: #00ff00; }
+  57% { border-color: #0077ff; }
+  71% { border-color: #8b00ff; }
+  85% { border-color: #ff00ff; }
+  100% { border-color: #ff0000; }
+}
+
+.animate-rainbow-border {
+  animation: rainbow-border 3s linear infinite;
+  border-width: 4px;
+  border-style: solid;
+}
+
+/* ===== GRADIENT BACKGROUND SHIFT ===== */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-bg {
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* ===== PULSE RING ===== */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.8; }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+/* ===== ROTATING STAR ===== */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+/* ===== SHAKE ===== */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+/* ===== CONFETTI FALL ===== */
+@keyframes confetti-fall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0.3; }
+}
+
+/* ===== SCANLINE EFFECT ===== */
+@keyframes scanline {
+  0% { top: -10%; }
+  100% { top: 110%; }
+}
+
+/* ===== BODY ===== */
+body {
+  background: var(--deep-blue);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--deep-blue);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--electric-blue), var(--hot-pink));
+  border-radius: 4px;
+}
